@@ -1,0 +1,10 @@
+### CoinMarketCap
+GET https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
+X-CMC_PRO_API_KEY: "69e350b1-2824-477c-80db-bffd5fd57498"
+Accept: application/json
+
+{
+    "start": "1",
+    "limit": "5000",
+    "convert": "USD"
+}
