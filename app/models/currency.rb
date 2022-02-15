@@ -10,8 +10,7 @@ class Currency < ApplicationRecord
     response = JSON.parse(request.body)["data"]["1"]["quote"]["USD"]["price"]
   end
 
-  def slug_name
-    self.slug
+  def calculate_value(amount)
+    (current_price.to_f * amount.to_f).round(4)
   end
-
 end
