@@ -1,26 +1,20 @@
-import React, {Component} from "react";
+import React from "react";
 
-class Calculate extends Component {
-  constructor(props){
-    super(props)
-  }
-
-  render(){
-    return(
-      <div>
-        <h1>How much {this.props.active_currency.name} do you own?</h1>
-        <form onSubmit={this.props.handleSubmit}>
-          <div className="form-group">
-            <label>Enter Amount owned</label><br/>
-            <input onChange={this.props.handleChange} autoComplete="off" type="text" name="amount" placeholder="how much do you own?" value={this.props.amount} className="field" />
-          </div>
-          <div className="form-group">
-            <input type="submit" className="calculate-btn" value="calculate my total" />
-          </div>
-        </form>
-      </div>
-    )
-  }
+const Calculate = (props) => {
+  return(
+    <div>
+      <h1>How much {props.active_currency.name} do you own?</h1>
+      <form onSubmit={props.handleSubmit}>
+        <div className="form-group">
+        <label>Enter Amount owned</label><br/>
+          <input onChange={props.handleChange} autoComplete="off" type="text" name="amount" placeholder="how much do you own?" value={props.amount} className="field" />
+        </div>
+        <div className="form-group">
+          <input type="submit" className="calculate-btn" value="calculate my total" />
+        </div>
+      </form>
+    </div>
+  )
 }
 
 export default Calculate;
