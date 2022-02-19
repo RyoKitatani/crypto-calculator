@@ -12,7 +12,7 @@ class Calculate extends Component {
         <form onSubmit={this.props.handleSubmit}>
           <div className="form-group">
             <label>Enter Amount owned</label><br/>
-            <input onChange={this.props.handleChange} autoComplete="off" type="text" name="amount" placeholder="how much do you own?" value={this.props.amount} className="filed" />
+            <input onChange={this.props.handleChange} autoComplete="off" type="text" name="amount" placeholder="how much do you own?" value={this.props.amount} className="field" />
           </div>
           <div className="form-group">
             <input type="submit" className="calculate-btn" value="calculate my total" />
