@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Search from "./Search";
 import Calculate from "./Calculate";
+import Portfolio from "./Portfolio";
 import axios from "axios";
 
 class PortfolioContainer extends Component {
@@ -11,7 +12,7 @@ class PortfolioContainer extends Component {
       portfolio: [],
       search_results: [],
       active_currency: null,
-      amount: ''
+      amount: '' 
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -61,16 +62,11 @@ class PortfolioContainer extends Component {
         portfolio: [...this.state.portfolio, data.data]
       })
     })
-    .catch((data) => {
-      debugger
-    })
-
+    .catch( (err) => console.log(err))
   }
 
   handleAmount(e){
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    this.setState({[e.target.name]: e.target.value})
   }
 
   render() {
@@ -91,6 +87,7 @@ class PortfolioContainer extends Component {
     return(
       <div>
         {searchOnCalculate}
+        <Portfolio portfolio={this.state.portfolio} />
       </div>
     )
   }

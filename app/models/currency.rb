@@ -8,7 +8,8 @@ class Currency < ApplicationRecord
       "Content-Type" => "application/json"
     })
 
-    response = JSON.parse(request.body)["data"]["1"]["quote"]["USD"]["price"]
+    res_body = JSON.parse(request.body)["data"]
+    respose = res_body[res_body.keys.first]["quote"]["USD"]["price"]
   end
 
   def calculate_value(amount)
