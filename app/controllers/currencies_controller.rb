@@ -10,7 +10,7 @@ class CurrenciesController < ApplicationController
   # takes in currency id and the amoutn owened
   # returns final caluculations
   def calculate
-    amout = params[:amount]
+    amount = params[:amount]
     render json: {
       currency: currency,
       current_price: currency.current_price,

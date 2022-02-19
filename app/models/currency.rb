@@ -7,6 +7,7 @@ class Currency < ApplicationRecord
       "X-CMC_PRO_API_KEY" => ENV["API_KEY"],
       "Content-Type" => "application/json"
     })
+
     response = JSON.parse(request.body)["data"]["1"]["quote"]["USD"]["price"]
   end
 
